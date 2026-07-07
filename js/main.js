@@ -43,3 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.classList.toggle('active')
   );
 });
+
+document.getElementById("contactBtn").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText("contact@ryanjbernal.com");
+    contactBtn.innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Copied to Clipboard!';
+    contactBtn.style.backgroundColor = "";
+
+    setTimeout(() => {
+      contactBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Get in Contact';
+      contactBtn.style.backgroundColor = "";
+    }, 2000);
+  } catch (err) {
+    document.getElementById("contactBtn").textContent = "Failed to copy...";
+    console.error(err);
+  }
+});
