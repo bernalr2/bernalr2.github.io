@@ -1,4 +1,4 @@
-// FAQ Accordion
+// FAQ Accordion (NOT IN USE)
 document.addEventListener('DOMContentLoaded', () => {
   const faqContainer = document.querySelector('.faq-content');
 
@@ -36,12 +36,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Mobile Menu
 document.addEventListener('DOMContentLoaded', () => {
+  let wasMenuOpen = false;
   const hamburgerButton = document.querySelector('.hamburger-button');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const blurMenu = document.querySelector('.blur-menu');
 
-  hamburgerButton.addEventListener('click', () =>
-    mobileMenu.classList.toggle('active')
-  );
+  blurMenu.style.display = 'none';
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 670) {
+      hamburgerButton.style.display = 'none';
+      mobileMenu.style.display = 'none';
+      blurMenu.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+
+    else {
+      hamburgerButton.style.display = 'block';
+      mobileMenu.style.display = 'block';
+      if (wasMenuOpen === true) {
+        mobileMenu.classList.toggle('active');
+        wasMenuOpen = !wasMenuOpen;
+      }
+    }
+  });
+
+  hamburgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    wasMenuOpen = !wasMenuOpen;
+    if (document.body.style.overflow === 'hidden') {
+      document.body.style.overflow = 'auto';
+      blurMenu.style.display = 'none';
+    }
+    else {
+      document.body.style.overflow = 'hidden';
+      blurMenu.style.display = 'block';
+    }
+  });
 });
 
 document.getElementById("contactBtn").addEventListener("click", async () => {

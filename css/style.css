@@ -541,6 +541,16 @@ img {
   transition: right 0.3s ease-in-out;
 }
 
+.blur-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
 .mobile-menu.active {
   right: 0;
 }
@@ -599,6 +609,7 @@ img {
   }
 }
 
+/* Better Resizing for the video previews? */
 @media (max-width: 770px) {
   .video .video-preview-2 {
     margin-bottom: 20px;
