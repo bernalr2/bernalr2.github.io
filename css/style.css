@@ -150,6 +150,13 @@ img {
   align-items: center;
 }
 
+.video .video-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Orignally 1fr on second number */
+  gap: 30px;
+  margin-top: 50px;
+}
+
 .video .video-preview {
   margin-bottom: 20px;
   width: 1000px;
@@ -194,7 +201,7 @@ img {
 .skills-track {
   display: flex;
   width: max-content;
-  animation: spin 20s linear infinite
+  animation: spin 20s linear infinite;
 }
 
 .skills .skills-grid {
@@ -609,48 +616,6 @@ img {
   }
 }
 
-/* Better Resizing for the video previews? */
-@media (max-width: 770px) {
-  .video .video-preview-2 {
-    margin-bottom: 20px;
-    width: 242px;
-    height: auto;
-  }
-
-  .video .video-preview-3 {
-    margin-bottom: 20px;
-    width: 242px;
-    height: auto;
-  }
-
-  .video .video-preview-4 {
-    margin-bottom: 20px;
-    width: 242px;
-    height: auto;
-  }
-}
-
-/* Better Resizing for these sizes?  */
-@media (max-width: 760px) {
-  .video .video-preview-2 {
-    margin-bottom: 20px;
-    width: 240px;
-    height: auto;
-  }
-
-  .video .video-preview-3 {
-    margin-bottom: 20px;
-    width: 240px;
-    height: auto;
-  }
-
-  .video .video-preview-4 {
-    margin-bottom: 20px;
-    width: 240px;
-    height: auto;
-  }
-}
-
 @media (max-width: 670px) {
   .navbar .main-menu {
     display: none;
@@ -787,24 +752,6 @@ img {
   .video .video-preview {
     margin-bottom: 20px;
     width: 600px;
-    height: auto;
-  }
-
-  .video .video-preview-2 {
-    margin-bottom: 20px;
-    width: 150px;
-    height: auto;
-  }
-
-  .video .video-preview-3 {
-    margin-bottom: 20px;
-    width: 150px;
-    height: auto;
-  }
-
-  .video .video-preview-4 {
-    margin-bottom: 20px;
-    width: 150px;
     height: auto;
   }
 }
